@@ -1,0 +1,215 @@
+{
+    "Title": "Food Tour of Italy",
+    "Start": "After deciding to go on a last-minute solo vacation, you've arrived your perfect food focused vacation destination: Italy! \nWhile your here, see if you can complete your food-focused bucket list!<br><br>",
+    "Credits": "Created by Adam Smith (amsmith@ucsc.edu). Edited by Celeste Herrera (cherre27@ucsc.edu)",
+    "InitialLocation": "Airport",
+    "GameWorldItem": [
+        {   "Text": "Check Bucket List",
+            "Use": "Must trys if I ever go to Italy! <br>--------------- <br>- Arancina <br>- Cacciò e Pepe <br>- Maritozzo con Pana <br>- Crostata <br>- Italian Hot Chocolate <br>---------------",
+            "InitailItemLocation":"Airport",
+            "Value": 1,
+            "Target": "Airport"
+        },
+        {   "TextPre": "Talk to concierge and pick up Guide book",
+            "Text": "Check Guide",
+            "Use": "Heres a Guide of places to get food in town. <br>--------------- <br>- Looks like there are some stores you can buy some groceries and snacks next to the hotel, and theres a Cafe next to the Corner Store <br>- Theres two other Cafes next to the Flower Gardens and Museum, which you can get to from the Town Square. <br>- And theres a couple Restaurants by the Gardens, as well as next to the Town Square and the Museum.<br>---------------",
+            "InitailItemLocation":"Hotel",
+            "Value": 0,
+            "Target": "Hotel"
+        },
+        {   "Usage": 1,
+            "TextPre": "Talk to Local Man",
+            "Use": "You noticed a friendly looking man feeding some birds and decide to have a chat. Turns out he's family friends with the owners of the Nicest Restaurant in town, and lucky for you, he can get you a Reservation!",
+            "InitailItemLocation": "Town Square",
+            "Value": 0,
+            "Target": "Town Square"
+        }
+    ],
+    "Locations": {
+        "Airport": {
+            "Body": "Your currently at the Airport. If your hungry you can stop by to get something to eat, if not, you can head over to the Hotel to get checked.",
+            "Choices": [
+                {
+                    "Text": "Take a Taxi to your Hotel",
+                    "Target": "Hotel"
+                },
+                {
+                    "Text": "Take a Taxi to a nearby Cafe",
+                    "Target": "Cafe 1"
+                }
+            ]
+        },
+        "Cafe 1": {
+            "Body": "Welcome to Caffè Al Bicerin. Here you decided to try a popular drink here, <br>- the Bicerin: a mix of coffee, chocolate, and creme",
+            "Choices": [
+                {
+                    "Text": "Walk to the Corner Store",
+                    "Target": "Corner Store"
+                },
+                {
+                    "Text": "Take a Taxi to the Airport",
+                    "Target": "Airport"
+                }
+            ]
+        },
+        "Corner Store": {
+            "Body": "You are currently at the Corner Store near your Hotel. While here, you've picked up some interesting drinks and snacks to try for later.",
+            "Choices": [
+                {
+                    "Text": "Walk to your Hotel",
+                    "Target": "Hotel"
+                },
+                {
+                    "Text": "Walk to a nearby Cafe",
+                    "Target": "Cafe 1"
+                }
+            ]
+        },
+        "Hotel": {
+            "Body": "You've arrived to your Hotel. Before heading out to your next destination, you can talk to the concierge for insight on places to go get food.",
+            "Body2": "You are currently at your Hotel.",
+            "Choices": [
+                {
+                    "Text": "Take a taxi to the Airport",
+                    "Target": "Airport"
+                },
+                {
+                    "Text": "Walk to the Town Square",
+                    "Target": "Town Square"
+                },
+                {
+                    "Text": "Walk to the Grocery Store",
+                    "Target": "Grocery Store"
+                },
+                {
+                    "Text": "Walk to the Corner Store",
+                    "Target": "Corner Store"
+                }
+                
+            ]
+        },
+        "Grocery Store": {
+            "Body": "You are currently at the Grocery Store. While here, you've picked up a few groceries.",
+            "Choices": [
+                {
+                    "Text": "Walk back to your Hotel",
+                    "Target": "Hotel"
+                }
+            ]
+        },
+        "Town Square": {
+            "Body": "You've made it to the Town Square, from here you can access the rest of the town.",
+            "Choices": [
+                {
+                    "Text": "Walk to a nearby Restaurant",
+                    "Target": "Restaurant 1"
+                },
+                {
+                    "Text": "Walk to the Museum",
+                    "Target": "Museum"
+                },
+                {
+                    "Text": "Walk back to your Hotel",
+                    "Target": "Hotel"
+                },
+                {
+                    "Text": "Walk to the Flower Gardens",
+                    "Target": "Garden"
+                }
+            ]
+        },
+        "Restaurant 1": {
+            "Body": "Welcome to Lo Scoglio! While here you decide to order an item on your Bucket List, <br>- Aranica: a stuffed rice ball, which is coated in breadcrumbs and fried",
+            "Choices": [
+                {
+                    "Text": "Walk back to the Town Square",
+                    "Target": "Town Square"
+                }
+            ]
+        },
+        "Garden": {
+            "Body": "You are currently at the Flower Gardens, its a beautiful day to stop and smell the roses.",
+            "Choices": [
+                {
+                    "Text": "Walk to a nearby Cafe",
+                    "Target": "Cafe 3" 
+                },
+                {
+                    "Text": "Walk back to the Town Square",
+                    "Target": "Town Square"
+                },
+                {
+                    "Text": "Head over to a popular Restaurant nearby",
+                    "Target": "Fancy Restaurant"
+                },
+                {
+                    "Text": "Walk to a nearby Restaurant",
+                    "Target": "Restaurant 3"
+                }
+            ]
+        },
+        "Cafe 3": {
+            "Body": "Welcome to Caffè Gilli! While here you decide to order an item on your Bucket List, <br>- Maritozzo con la Panna: a sweet roll which is cut open and filled with panna, fresh whipped creme",
+            "Choices": [
+                {
+                    "Text": "Walk back to the Flower Gardens",
+                    "Target": "Garden"
+                }
+            ]
+        },
+        "Restaurant 3": {
+            "Body": "Welcome to Venissa! While here you decide to order an item on your Bucket List, <br>- Caccio e Pepe: a pasta with a pecorino ramano and black pepper cheese sauce",
+            "Choices": [
+                {
+                    "Text": "Walk back to the Flower Gardens",
+                    "Target": "Garden"
+                }
+            ]
+        },
+        "Fancy Restaurant": {
+            "Body": "You'll need a reservation to get in, but there aren't any aviable for the next few months.",
+            "Body2": "As promised, the nice man from the Town Square was able to get you a reservation! You decide to order on of their popular menu items, <br>- Florentine steak: dry-aged for 21 days and cooked on a charcoal grill, served rare",
+            "Choices": [
+                {
+                    "Text": "Walk back to the Flower Gardens",
+                    "Target": "Garden"
+                }
+            ]
+        },
+        "Museum": {
+            "Body": "You are currently at the Museum. All the walking around and looking at historical artifacts has made you hungry, but luckily there are places to eat nearby",
+            "Choices": [
+                {
+                    "Text": "Walk to a nearby Cafe",
+                    "Target": "Cafe 2"
+                },
+                {
+                    "Text": "Walk to a nearby Restaurant",
+                    "Target": "Restaurant 2"
+                },
+                {
+                    "Text": "Walk back to the Town Square",
+                    "Target": "Town Square"
+                }
+            ]
+        },
+        "Cafe 2": {
+            "Body": "Welcome to Murena Suite! While here you decide to order an item on your Bucket List, <br>- Italian Hot Chocolate: a thick and creamy hot chocolate drink",
+            "Choices": [
+                {
+                    "Text": "Walk back to the Museum",
+                    "Target": "Museum"
+                }
+            ]
+        },
+        "Restaurant 2": {
+            "Body": "Welcome to Trattoria Pennestri! While here you decide to order an item on your Bucket List, <br>- Spaghetti alla Puttanesca: a pasta dish made with tomatoes, olive oil, olives, anchovies, chili peppers, capers, and garlic",
+            "Choices": [
+                {
+                    "Text": "Walk back to the Museum",
+                    "Target": "Museum"
+                }
+            ]
+        }
+    }
+}
