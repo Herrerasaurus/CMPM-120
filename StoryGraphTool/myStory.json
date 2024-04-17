@@ -19,6 +19,7 @@
         },
         {   "Usage": 1,
             "TextPre": "Talk to Local Man",
+            "Text": "Talk to Local Man",
             "Use": "You noticed a friendly looking man feeding some birds and decide to have a chat. Turns out he's family friends with the owners of the Nicest Restaurant in town, and lucky for you, he can get you a Reservation!",
             "InitailItemLocation": "Town Square",
             "Value": 0,
