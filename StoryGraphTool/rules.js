@@ -27,10 +27,15 @@ class Start extends Scene {
 class Location extends Scene {
     create(key) {
         let locationData = key; // TODO: use `key` to get the data object for the current story location
+        
+        
         if(this.engine.storyData.GameWorldItem[2].Value == 1 && locationData == "Fancy Restaurant"){
-            this.engine.show(this.engine.storyData.Locations[locationData].Body2 + "<br><br>"); // TODO: replace this text by the Body of the location data
+            this.engine.show(this.engine.storyData.Locations[locationData].Body2 + "<br><br>");
+            this.engine.storyData.GameWorldItem[2].Visits = 1; 
         }else if(this.engine.storyData.GameWorldItem[1].Value == 1 && locationData == "Hotel"){
-            this.engine.show(this.engine.storyData.Locations[locationData].Body2 + "<br><br>"); // TODO: replace this text by the Body of the location data
+            this.engine.show(this.engine.storyData.Locations[locationData].Body2 + "<br><br>");
+        }else if(this.engine.storyData.GameWorldItem[2].Visits == 1 && locationData == "Done"){
+            this.engine.show(this.engine.storyData.Locations[locationData].Body2 + "<br><br>");
         }
         else{
             this.engine.show(this.engine.storyData.Locations[locationData].Body + "<br><br>"); // TODO: replace this text by the Body of the location data
@@ -45,7 +50,7 @@ class Location extends Scene {
                 // TODO: add a useful second argument to addChoice so that the current code of handleChoice below works
             }
             let len1 = (this.engine.storyData.GameWorldItem).length;
-            for(let y = 0; y < len1; y++) { // TODO: loop over the location's Choices
+            for(let y = 0; y < len1; y++) { // TODO: loop over item Choices
                 const locData = this.engine.storyData.GameWorldItem[y];
                 console.log(locData.InitailItemLocation);
                 if(locData.Value != 0 || locData.InitailItemLocation == locationData){
@@ -56,19 +61,28 @@ class Location extends Scene {
                         this.engine.addChoice(locData.Text, locData);
                     }
                 }
-                // TODO: add a useful second argument to addChoice so that the current code of handleChoice below works
             }
 
             
         } else {
             this.engine.addChoice("The end.")
         }
+        if(this.engine.storyData.Locations[locationData].Check == 0){
+            this.engine.storyData.Locations[locationData].Check = 1;
+            this.engine.storyData.GameWorldItem[1].Count +=1;
+            console.log(this.engine.storyData.GameWorldItem[1].Count)
+        }
+        if(this.engine.storyData.GameWorldItem[1].Count == 5 && !(locationData == "Done")){
+            this.engine.show("<br> You've completed your Bucket List!");
+            this.engine.addChoice("Finish Trip", this.engine.storyData.Locations["Transfer"].Choices[0]);
+            
+        }
     }
 
     handleChoice(choice) {
         this.engine.show("&gt; "+choice.Text);
         //if choice is an item and not equiped, equipt for future reference
-        if(choice.Value == 0 | choice.Value == 1){
+        if(choice.Value == 0 || choice.Value == 1){
             choice.Value = 1;
             this.engine.show(choice.Use);
         }

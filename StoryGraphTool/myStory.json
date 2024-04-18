@@ -15,14 +15,16 @@
             "Use": "Heres a Guide of places to get food in town. <br>--------------- <br>- Looks like there are some stores you can buy some groceries and snacks next to the hotel, and theres a Cafe next to the Corner Store <br>- Theres two other Cafes next to the Flower Gardens and Museum, which you can get to from the Town Square. <br>- And theres a couple Restaurants by the Gardens, as well as next to the Town Square and the Museum.<br>---------------",
             "InitailItemLocation":"Hotel",
             "Value": 0,
-            "Target": "Hotel"
+            "Target": "Hotel",
+            "Count": 0
         },
         {   "Usage": 1,
-            "TextPre": "Talk to Local Man",
             "Text": "Talk to Local Man",
+            "TextPre": "Talk to Local Man",
             "Use": "You noticed a friendly looking man feeding some birds and decide to have a chat. Turns out he's family friends with the owners of the Nicest Restaurant in town, and lucky for you, he can get you a Reservation!",
             "InitailItemLocation": "Town Square",
             "Value": 0,
+            "Visits": 0,
             "Target": "Town Square"
         }
     ],
@@ -41,7 +43,8 @@
             ]
         },
         "Cafe 1": {
-            "Body": "Welcome to Caffè Al Bicerin. Here you decided to try a popular drink here, <br>- the Bicerin: a mix of coffee, chocolate, and creme",
+            "Body": "Welcome to Caffè Al Bicerin. Here you decided to try a popular drink here, <br>- the Bicerin: a mix of coffee, chocolate, and creme<br>And one of your Bucket List items <br>- Crostata: an Italian baked tart",
+            "Check": 0,
             "Choices": [
                 {
                     "Text": "Walk to the Corner Store",
@@ -121,6 +124,7 @@
         },
         "Restaurant 1": {
             "Body": "Welcome to Lo Scoglio! While here you decide to order an item on your Bucket List, <br>- Aranica: a stuffed rice ball, which is coated in breadcrumbs and fried",
+            "Check": 0,
             "Choices": [
                 {
                     "Text": "Walk back to the Town Square",
@@ -151,6 +155,7 @@
         },
         "Cafe 3": {
             "Body": "Welcome to Caffè Gilli! While here you decide to order an item on your Bucket List, <br>- Maritozzo con la Panna: a sweet roll which is cut open and filled with panna, fresh whipped creme",
+            "Check": 0,
             "Choices": [
                 {
                     "Text": "Walk back to the Flower Gardens",
@@ -160,6 +165,7 @@
         },
         "Restaurant 3": {
             "Body": "Welcome to Venissa! While here you decide to order an item on your Bucket List, <br>- Caccio e Pepe: a pasta with a pecorino ramano and black pepper cheese sauce",
+            "Check": 0,
             "Choices": [
                 {
                     "Text": "Walk back to the Flower Gardens",
@@ -196,6 +202,7 @@
         },
         "Cafe 2": {
             "Body": "Welcome to Murena Suite! While here you decide to order an item on your Bucket List, <br>- Italian Hot Chocolate: a thick and creamy hot chocolate drink",
+            "Check": 0,
             "Choices": [
                 {
                     "Text": "Walk back to the Museum",
@@ -204,13 +211,27 @@
             ]
         },
         "Restaurant 2": {
-            "Body": "Welcome to Trattoria Pennestri! While here you decide to order an item on your Bucket List, <br>- Spaghetti alla Puttanesca: a pasta dish made with tomatoes, olive oil, olives, anchovies, chili peppers, capers, and garlic",
+            "Body": "Welcome to Trattoria Pennestri! While here you decide try one of their popular menu items, <br>- Spaghetti alla Puttanesca: a pasta dish made with tomatoes, olive oil, olives, anchovies, chili peppers, capers, and garlic",
             "Choices": [
                 {
                     "Text": "Walk back to the Museum",
                     "Target": "Museum"
                 }
             ]
+        },
+        "Done": {
+            "Body": "After completeing your Bucket List, you feel content with your Trip to Italy and are ready to go back home to tell your friends and family all about it! Next time you come, you'll make sure to try and get a reservation at the towns Famous Restaurant, but for now you can daydream about the food they serve there.",
+            "Body2": "After completeing your Bucket List and getting a chance to have a meal at the towns Famous Restaurant, you feel satisfied with your Trip to Italy and are ready to go back home to tell your friends and family all about it!"
+        },
+        "Transfer":{
+            "Body": "",
+            "Choices":[
+                {
+                    "Text": "Finish Trip",
+                    "Target": "Done"
+                }
+            ]
+
         }
     }
 }
